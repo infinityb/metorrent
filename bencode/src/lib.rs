@@ -377,18 +377,3 @@ mod tests {
         assert_eq!(&rebencoded[..], &document[..]);
     }
 }
-
-#[cfg(feature="afl")]
-pub mod afl {
-    use std::io::{self, Read};
-    use super::{from_slice, Value};
-
-    pub fn bdecode() {
-        let mut buf = Vec::new();
-        io::stdin().take(1 << 20).read_to_end(&mut buf).unwrap();
-        match from_slice::<Value>(&*buf) {
-            Ok(bencode) => println!("{:#?}", bencode),
-            Err(err) => println!("erorr: {:?}", err),
-        }
-    }
-}

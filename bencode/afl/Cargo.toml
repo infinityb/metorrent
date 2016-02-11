@@ -7,8 +7,6 @@ authors = ["Stacey Ell <stacey.ell@gmail.com>"]
 path = ".."
 features = ["afl"]
 
-[dependencies.afl-coverage-plugin]
-git = "https://github.com/kmcallister/afl.rs"
-
-[dependencies.afl-coverage]
-git = "https://github.com/kmcallister/afl.rs"
+[dependencies]
+afl = "0.1.0"
+afl-plugin = "0.1.0"
